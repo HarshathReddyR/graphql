@@ -23,7 +23,7 @@ type NewCompany struct {
 type NewJob struct {
 	JobTitle  string `json:"jobTitle"`
 	JobSalary string `json:"jobSalary"`
-	ID        string `json:"id"`
+	Cid       string `json:"cid"`
 }
 
 type NewUser struct {

@@ -18,6 +18,8 @@ type UserRepo interface {
 	CreateJob(j models.Job) (models.Job, error)
 	ViewCompanyById(cid string) (models.Company, error)
 	ViewAllCompany() ([]models.Company, error)
+	ViewJobById(jid string) (models.Job, error)
+	ViewAllJob() ([]models.Job, error)
 }
 
 func NewRepo(db *gorm.DB) (UserRepo, error) {

@@ -32,6 +32,8 @@ input NewCompany{
 type Query{
     ViewCompanyById(Cid: ID!): Company!
     ViewAllCompany: [Company!]!
+    ViewJobById(id:ID!):Job!
+    ViewAllJob:[Job!]!
 }
 type Job{
   id : ID!
@@ -42,5 +44,5 @@ type Job{
 input NewJob{
   jobTitle  :String!
 	jobSalary :String!
-	id:ID!
+	cid:String!
 }

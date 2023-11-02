@@ -6,7 +6,6 @@ package graph
 
 import (
 	"context"
-	"fmt"
 	"graphql/graph/model"
 )
 
@@ -22,17 +21,27 @@ func (r *mutationResolver) CreateCompany(ctx context.Context, input model.NewCom
 
 // CreateJob is the resolver for the CreateJob field.
 func (r *mutationResolver) CreateJob(ctx context.Context, input model.NewJob) (*model.Job, error) {
-	panic(fmt.Errorf("not implemented: CreateJob - CreateJob"))
+	return r.S.CreateJob(input)
 }
 
 // ViewCompanyByID is the resolver for the ViewCompanyById field.
 func (r *queryResolver) ViewCompanyByID(ctx context.Context, cid string) (*model.Company, error) {
-	panic(fmt.Errorf("not implemented: ViewCompanyByID - ViewCompanyById"))
+	return r.S.ViewCompanyById(cid)
 }
 
 // ViewAllCompany is the resolver for the ViewAllCompany field.
 func (r *queryResolver) ViewAllCompany(ctx context.Context) ([]*model.Company, error) {
-	panic(fmt.Errorf("not implemented: ViewAllCompany - ViewAllCompany"))
+	return r.S.ViewAllcompany()
+}
+
+// ViewJobByID is the resolver for the ViewJobById field.
+func (r *queryResolver) ViewJobByID(ctx context.Context, id string) (*model.Job, error) {
+	return r.S.ViewJobById(id)
+}
+
+// ViewAllJob is the resolver for the ViewAllJob field.
+func (r *queryResolver) ViewAllJob(ctx context.Context) ([]*model.Job, error) {
+	return r.S.ViewAllJob()
 }
 
 // Mutation returns MutationResolver implementation.

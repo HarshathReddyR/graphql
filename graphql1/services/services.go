@@ -15,9 +15,11 @@ type Service struct {
 type UserService interface {
 	CreateUser(nu model.NewUser) (*model.User, error)
 	CreateCompany(c model.NewCompany) (*model.Company, error)
-	// CreateJob(j model.NewJob) (*model.Job, error)
+	CreateJob(j model.NewJob) (*model.Job, error)
 	ViewCompanyById(cid string) (*model.Company, error)
 	ViewAllcompany() ([]*model.Company, error)
+	ViewJobById(jid string) (*model.Job, error)
+	ViewAllJob() ([]*model.Job, error)
 }
 
 func NewServices(userRepo repository.UserRepo) (UserService, error) {
